@@ -8,10 +8,6 @@ int main(int argc, char *argv[]);
 
 Data_t *getParam(int argc, char *argv[]);
 
-void initProcess();
-
-void endProcess();
-
 void createRider(int rider_id);
 
 void createBus(int bus_id);

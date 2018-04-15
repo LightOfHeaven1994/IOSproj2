@@ -4,10 +4,11 @@
 CC=gcc
 CLFAGS=-std=gnu99 
 PROJ=proj2
+SYM_PROC=sym_process
 OTHERFL = -lpthread -lrt
 
 $(PROJ): $(PROJ).c
-	$(CC) $(CLFAGS) $(PROJ).c -o $(PROJ) $(OTHERFL)
+	$(CC) $(CLFAGS) $(PROJ).c $(SYM_PROC).c -o $(PROJ) $(OTHERFL)
 
 clean:
 	rm -rf $(PROJ)

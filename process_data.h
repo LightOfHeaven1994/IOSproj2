@@ -17,19 +17,39 @@
 /*
 * @brief Structure for process
 */
+//***********************************************************
 typedef struct {
 	int A; /*< Count of riders process*/
 	int C; /*< Count of buses process*/
 	int ART; /*< Count time for generation new rider process*/
 	int ABT; /*< Count time for generation new bus process*/
 } Data_t;
-
 Data_t *params;
+//***********************************************************
+typedef struct {
+	int action_counter;
+	int counter_riders;
+	int riders_in_bus;	
+} Counters;
+
+Counters *memory_counters;
+int shm_Counters;
+//***********************************************************
 
 // Semaphores
 sem_t *Bus;
 sem_t *RidersQueue;
 sem_t *Mutex;
 
-int *action_counter;
-int action_counter_shm;
+pid_t Bus_Proc; /*< ID of process */
+pid_t Bus_New_Proc;
+
+pid_t Rid_Proc; /*< ID of process */
+pid_t Rid_New_Proc;
+
+
+/*int action_counter_shm;
+
+int counter_riders_shm;
+
+int riders_in_bus_shm;*/

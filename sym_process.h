@@ -4,6 +4,10 @@
 * @brief Standard header for sym_process.c
 */
 
-void initProcess();
+void create_symaphores();
+
+void create_shared_memory();
 
 void endProcess();
+
+void print_error();
